@@ -1,0 +1,44 @@
+{
+  "acp_feed": [
+    {
+      "id": "prod_1_lb_jumbo_shrimp_2b19b0a",
+      "title": "1 LB Jumbo Shrimp",
+      "description": "1 LB Jumbo Shrimp. Sourced from merchant catalog. Suitable for agent comparison and purchase flows.",
+      "url": "https://getmainelobster.com/products/example-shrimp",
+      "price": { "amount": 2499, "currency": "USD" },
+      "images": ["https://getmainelobster.com/cdn/shop/files/example.jpg"],
+      "attributes": {
+        "category": "seafood",
+        "subcategory": "shrimp",
+        "weight": { "value": 1, "unit": "lb" },
+        "packaging": "refrigerated_or_frozen"
+      },
+      "availability": { "status": "in_stock", "quantity": null },
+      "merchant": { "id": "getmainelobster", "name": "Get Maine Lobster" },
+      "fulfillment": {
+        "shipping_regions": ["US"],
+        "estimated_days": null,
+        "perishable": true,
+        "cold_shipping_required": true
+      },
+      "agent_metadata": {
+        "search_keywords": ["jumbo", "shrimp", "seafood", "maine"],
+        "confidence_score": 0.72
+      }
+    }
+  ],
+  "meta": {
+    "source": "local_fallback",
+    "latency_ms": 1200,
+    "deepseek_ms": null,
+    "prompt_tokens": null,
+    "completion_tokens": null,
+    "total_tokens": null,
+    "used_fallback": true,
+    "raw_products_count": 1,
+    "acp_products_count": 1,
+    "error": "DEEPSEEK_API_KEY is not set",
+    "retried": false,
+    "rate_limited": false
+  }
+}

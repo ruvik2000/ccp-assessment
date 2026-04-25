@@ -1,14 +1,21 @@
 import sys
 import requests
 from bs4 import BeautifulSoup
-from pydantic import BaseModel, HttpUrl
+from pydantic import BaseModel
 from typing import List, Optional
+
+def _handle_from_product_url(url: str) -> Optional[str]:
+    if "/products/" not in url:
+        return None
+    return url.rstrip("/").split("/products/", 1)[-1].split("?")[0] or None
+
 
 class Product(BaseModel):
     title: str
     url: str
     price: Optional[str] = None
     image_url: Optional[str] = None
+    handle: Optional[str] = None
 
 def extract_catalog() -> List[Product]:
     url = "https://getmainelobster.com/collections/all"
@@ -66,7 +73,8 @@ def extract_catalog() -> List[Product]:
                 title=title,
                 url=product_url,
                 price=price,
-                image_url=img_url
+                image_url=img_url,
+                handle=_handle_from_product_url(product_url),
             ))
         except Exception as e:
             continue
